@@ -1,0 +1,292 @@
+﻿----------------------------------------
+   WiMOD LR Studio - Release Notes
+   Copyright (C) 2013 - 2018 IMST GmbH
+----------------------------------------
+
+.1 Content:
+----------------------------------------------------------------------------
+This release contains the following components/files:
+
+ - WiMOD_LR_Studio.exe           - executable Windows application file
+ - WiMOD_LR_Studio.ini           - internal configuration file
+ - WiMOD_LR_RadioMsg.cfg         - includes some example radio link messages
+ - WiMOD_LR_RadioSettings.cfg    - includes a radio configuration set
+ - WiMOD_LR_Studio_UserGuide.pdf - user guide for this application
+ - FirmwareImages/...            - firmware images for Long Range radio modules by IMST
+ - Qt5Gui.dll                    - Qt Gui runtime library
+ - Qt5Core.dll                   - Qt Core runtime library
+ - Qt5Widgets.dll                - Qt Widgets runtime library
+ - libgcc_s_dw2-1.dll            - GCC runtime library
+ - libstdc++-6.dll               - STD C++ runtime library
+ - libwinpthread-1.dll           - Windows pthread runtime library
+ - icudt51.dll                   - Qt runtime library
+ - icuin51.dll                   - Qt runtime library
+ - icuuc51.dll                   - Qt runtime library
+ - platforms/qminimal.dll        - Qt runtime library
+ - platforms/qoffscreen.dll      - Qt runtime library
+ - platforms/qwindows.dll        - Qt runtime library
+
+.2 General Information:
+-----------------------
+ - Supported OS: 
+    - Windows 7 
+    - Windows XP
+    - MAC OS X (on demand)
+  
+ - Supported Radio Modules: 
+    - Displayed on Info Page of WiMOd LR Studio
+    
+ - The initial INI_FILE "WiMOD_LR_Studio.ini" will be copied on first run to 
+   "c:\Users\$USER_NAME\AppData\Local\IMST\WiMOD_LR_Studio" !
+
+.3 Installation:
+-----------------------------------------------------------------------------
+ - Copy (unzip) the "WiMOD LR Studio" folder to your local Application folder
+ - Intall the VCP driver for virtual comport support from FTDI
+
+.4 Known Limitations
+-------------------------------------------------------------------------
+ - none
+
+.5 Revision History:
+-------------------------------------------------
+
+Release V1.27.0 - 24.08.2018
+---------------------------------------------------------------------------------------
+ - Improved Filename Generation for Radio Link Test
+ - Controller ID added to Device Info Page
+ - Minor fixes
+
+Release V1.26.0 - 27.03.2018
+---------------------------------------------------------------------------------------
+ - New Studio Settings Pageg for configuraton of
+   - VID_PIDs for further Virtual Comport Drivers
+   - Standard COM Port names
+   - Additional baudrates used for module discovery procedure
+ - New Search Field & Navigation Buttons in Event Box and Event Tables  
+ - New Page for HCI Parameter Settings: module baudrate and timings
+ - New Configuration options for Sensor Application
+ 
+Release V1.25.0 - 21.11.2017
+---------------------------------------------------------------------------------------
+ - Initial Support for iM282A added
+
+Release V1.24.0 - 13.09.2017
+---------------------------------------------------------------------------------------
+ - Handling for Customer Specific Module Firmware changed
+
+Release V1.23.0 - 19.06.2017
+---------------------------------------------------------------------------------------
+ - Internal refactoring
+ - Internal preparations for new radio modules in 2017
+ - Minor Bug Fixes
+ - Dynamic Feature Control configuration via Settings Menu removed
+ - New Info Page
+
+Release V1.22.1 - 21.11.2016 
+---------------------------------------------------------------------------------------
+ - Change in Timer Management for DataLink Service
+
+Release V1.22.0 - 28.10.2016 
+---------------------------------------------------------------------------------------
+ - Overlay EditBox for Frequency Slider
+ - Round nearest for carrier frequency
+
+Release V1.21.0 - 25.10.2016
+---------------------------------------------------------------------------------------
+ - Updates for specific customer
+ - BugFix for RTC Alarm 
+ 
+Release V1.20.0 - 27.09.2016
+---------------------------------------------------------------------------------------
+ - Initial support for LR Mote 2 added
+ 
+Release V1.19.4 - 06.09.2016
+---------------------------------------------------------------------------------------
+ - Bugfix: signed calibration values in PTS 
+ 
+Release V1.19.3 - 01.09.2016
+---------------------------------------------------------------------------------------
+ - Minor Bug Fixes
+ - Switchable Firmware Compatiblility Check via Settings Menu
+ - Switchable Dynamic Feature Control via Settings Menu
+
+Release V1.19.0 - 12.08.2016
+---------------------------------------------------------------------------------------
+ - Dynamic Feature Support added
+ - Settings Menu added: ISO-format, Automatic Page Refresh
+ - Clear Table & Reset Counters for Event/MessageTables added
+
+Release V1.18.4 - 07.07.2016
+---------------------------------------------------------------------------------------
+ - New HCI and Serial Port handling without WiMODLRHCI.DLL 
+ - New LogFile handling 
+ - New HCI Logging feature added  
+ - New Device Discovery after Firmware Update 
+
+Release V1.17.0 - 17.03.2016
+---------------------------------------------------------------------------------------
+ - New page handling
+ - New Firmware Update Support for iM881A 
+ - New WiMOD_LR_HCI.DLL V1.11.0 / 16.03.2016 required !!!!
+ 
+Release V1.16.1 - 29.02.2016
+---------------------------------------------------------------------------------------
+ - New table handling
+
+Release V1.16.0 - 25.02.2016
+---------------------------------------------------------------------------------------
+ - New GUI engine with minor improvements
+
+Release V1.15.4 - 22.02.2016
+---------------------------------------------------------------------------------------
+ - NWK Support: - new configuration via project file
+               
+Release V1.15.3 - 14.01.2016
+---------------------------------------------------------------------------------------
+ - Support for user defined VID_PIDs (virtual comport drivers) and 
+   standard COM ports added via INI_FILE (see examples below):
+   a) add the following line to your INI_FILE if you need support for a specific 
+      USB-Virtual-Comport driver, e.g.: SiLabs, STLink  
+    ...
+    [ComPorts]
+    Used=...
+    VID_PIDS="VID_10C4.PID_EA60", "VID_0483.PID_374B.*"
+    ....
+   
+   b) add the following line to your INI_FILE if you need connection support 
+      via standard COM Ports, e.g.: COM55, COM66, COM77 
+     ...
+    [ComPorts]
+    Used=...
+    Extra=COM55, COM66, COM77
+    ...
+   
+   
+Release V1.15.2 - 06.05.2016
+---------------------------------------------------------------------------------------
+ - Support for STLink Virtual Comport added
+
+Release V1.15.1 - 15.09.2015
+---------------------------------------------------------------------------------------
+ - New Folder Documents including Feature Spec, HCI Spec and User Guide added
+ - New Firmware Images V1.10 added
+
+Release V1.15.0 - 04.09.2015
+---------------------------------------------------------------------------------------
+ - Support for new firmware V1.10 features added:
+    - Listen Before Talk
+    - AES Encryption
+    - Automatic Power Saving 2 (improved low power current with RTC off)
+    - System Status: new Media Busy Counter
+  
+
+Release V1.14.2 - 23.07.2015
+---------------------------------------------------------------------------------------
+ - Firmware update support added
+ - Firmware compatiblility warning added
+ - Manual power saving / wakeup features removed
+ - application renamed to WiMODD_LR_Studio.exe
+ - GUI layout changed
+ - internal device handling changed
+ - new WiMOD logo  
+
+Release V1.13.0 - 20.07.2015
+---------------------------------------------------------------------------------------
+ - FSK Mode in radio configuration re-enabled
+ - Auto Power Saving Configuration added  -> radio configuration 
+ - Gateway Support temp. disabled
+ - WiMOD_LR_Base_Firmware_V1.9 required !!!
+ - New WiMODLR_HCI_DLL V1.9.1 / 21.07.2015 required !!!
+ 
+ 
+Release V1.9.0 - 10.04.2014
+---------------------------------------------------------------------------------------
+ - First Support for WiMOD LR Gateway (Cubie + Alpha6 Concentrator) added
+    - add following lines to WiMODLR_Studio.ini:
+    ...
+    [GatewaySupport]
+    ServerSupport=1
+    ServerPort=51000
+    Gateways=172.16.8.8, 172.16.8.9
+    GatewayPort=51001
+    ...
+ - click on "Discover Gateways"
+    - Gateway is displayed with IP address in Device Box
+    - received packets on gateway are forwarded via TCP-IP to WiMODLR Studio and displayed
+      on Packet Sniffer page
+ - Packet Sniffer Page
+    - new table layout with respect to concentrator packet format
+  
+Release V1.8.5 - 09.04.2014
+---------------------------------------------------------------------------------------
+ - Sensor Application added
+ - Device Management:
+    - remove device feature added (right mouse click)
+    - open com port retries limited to 4 times
+ - upgrade to Qt5 -> new Qt5 Libs required !!!!
+ - adaptions to support Ubuntu 64-Bit 12.04 LTS Linux
+ - GUI changes: Status Box, Radio Devices, Radio Link Test, .... 
+ - new WiMODLR_HCIDLL based on Qt5 Libs
+ - url to "wireless-solutions.de" added -> try open 
+ - RadioLinkTest: max. RF packet size limited to 64 bytes
+ - WiMODLR_Studio_UserGuide.pdf updated
+
+Release V1.7.0 - 24.02.2014
+---------------------------------------------------------------------------------------
+ - Configuration for Remote Control featuere (Firmware V1.6) added 
+    - HCI Button Pressed Indicator
+    - LED Button Pressed Indicator
+
+Release V1.6.0 - 12.02.2014
+---------------------------------------------------------------------------------------
+ - device box for connected radios extended with further device information
+  
+Release V1.5.0 - 19.12.2013
+---------------------------------------------------------------------------------------
+ - internal cleanup
+  
+Release V1.4.0 - 19.11.2013
+---------------------------------------------------------------------------------------
+ - New Configuration Options: 
+    - HCI Tx Indication
+    - HCI Power-Up Indication
+
+Release V1.3.6 - 22.10.2013
+---------------------------------------------------------------------------------------
+ - Bugfix: Radio Link Service - loading of radio message file fixed
+
+Release V1.3.5 - 21.10.2013
+---------------------------------------------------------------------------------------
+ - new device types for 32k, 64k, 128k devices supported
+
+Release V1.3.4 - 15.10.2013
+---------------------------------------------------------------------------------------
+ - bugfix for Radio CW Test: wrong frequency input to target
+
+Release V1.3.3 - 11.10.2013
+---------------------------------------------------------------------------------------
+ - support for 915 MHz Band (USA) added
+ - Signal Bandwith 500 kHz added
+ - RTC enable/disable configuration option added 
+ - Bugfix in DLL for large messages 
+
+Release V1.2.6 - 19.09.2013
+---------------------------------------------------------------------------------------
+ - new configuration parameters: Rx Ctrl, Tx Ctrl
+ - new format for radio link test counters (32Bit -> 16Bits)
+ - new Frequency Configuration Slider handling (FreqSpace -> SX1272 RegSpace)
+ - several bugfixes
+
+Release V1.2.0 - 06.09.2013
+---------------------------------------------------------------------------------------
+ - new frequency configuration (24-Bit raw SX1272 register coding) -> requires new firmware !!!
+ - new buffer format (16 Bit Length Fields) between DLL + GUI-application 
+ 
+Release V1.1.0 - 07.08.2013
+---------------------------------------------------------------------------------------
+ - HCI logging output displayed in Status Window
+
+Release V1.0.0 - 06.08.2013
+---------------------------------------------------------------------------------------
+ - inital release for iM880A 
